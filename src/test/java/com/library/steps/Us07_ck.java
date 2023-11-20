@@ -18,8 +18,7 @@ public class Us07_ck {
     BorrowedBooksPage borrowedBooksPage=new BorrowedBooksPage();
     @When("the user clicks Borrow Book")
     public void the_user_clicks_borrow_book() {
-//        bookPage.borrowBook("Test2023").click();
-        bookPage.borrowBook(bookPage.bookName.getText()).click();
+        bookPage.borrowBook("Test2023").click();
 
     }
     @Then("verify that book is shown in {string} page")
@@ -29,8 +28,7 @@ public class Us07_ck {
         for (WebElement each : borrowedBooksPage.allBorrowedBooksName) {
             allBooksNameInString.add(each.getText());
         }
-//        Assert.assertTrue(allBooksNameInString.contains("Test2023"));
-        Assert.assertTrue(allBooksNameInString.contains(bookPage.bookName));
+        Assert.assertTrue(allBooksNameInString.contains("Test2023"));
     }
     @Then("verify logged student has same book in database")
     public void verify_logged_student_has_same_book_in_database() {
